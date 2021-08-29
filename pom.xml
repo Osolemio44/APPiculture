@@ -6,6 +6,12 @@
     <artifactId>Appiculture</artifactId>
     <version>0.0.1</version>
 
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <javafx.version>11.0.2</javafx.version>
+    </properties>
+ 
     <dependencies>
         <dependency>
             <groupId>org.xerial</groupId>
@@ -23,34 +29,42 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
-            <version>11.0.2</version>
+	    <version>${javafx.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>11.0.2</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>11.0.2</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
-            <version>11.0.2</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
-            <version>11.0.2</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>11.0.2</version>
+            <version>${javafx.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-maven-plugin -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>0.0.6</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
         <dependency>
@@ -59,22 +73,15 @@
             <version>1.2</version>
         </dependency>
 
-
     </dependencies>
 
     <build>
         <plugins>
-            <!-- <plugin>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.6</version>
-                <configuration>
-                    <mainClass>com.base.Launcher</mainClass>
-                    <executable>C:\libs\jdk-11\bin\jlink</executable>
-                </configuration>
-            </plugin> -->
         </plugins>
     </build>
+
+</project>
+
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -83,3 +90,4 @@
 
 
 </project>
+
