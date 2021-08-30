@@ -82,20 +82,7 @@
                         <id>enforce</id>
                         <configuration>
                             <rules>
-                                <requireUpperBoundDeps>
-                                    <!-- 'uniqueVersions' (default:false) can be set to true if you want to compare the timestamped SNAPSHOTs  -->
-                                    <!-- <uniqueVersions>true</uniqueVersions> -->
-                                    <!-- If you wish to ignore certain cases:
-                  <excludes>
-                    <exclude>com.google.guava:guava</exclude>
-                  </excludes>
-                  -->
-                                    <!-- If you include specific cases only these will be checked: (when omitted everything is included)
-                  <includes>
-                    <include>com.google.guava:guava</include>
-                  </includes>
-                  -->
-                                </requireUpperBoundDeps>
+                                <requireUpperBoundDeps></requireUpperBoundDeps>
                             </rules>
                         </configuration>
                         <goals>
@@ -104,13 +91,23 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <!-- <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target> -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 
