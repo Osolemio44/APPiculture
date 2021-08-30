@@ -64,21 +64,53 @@
 
     <build>
         <plugins>
-            <!-- <plugin>
+            <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.6</version>
                 <configuration>
                     <mainClass>com.base.Launcher</mainClass>
-                    <executable>C:\libs\jdk-11\bin\jlink</executable>
+                    <!-- <executable>C:\libs\jdk-11\bin\jlink</executable> -->
                 </configuration>
-            </plugin> -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <configuration>
+                            <rules>
+                                <requireUpperBoundDeps>
+                                    <!-- 'uniqueVersions' (default:false) can be set to true if you want to compare the timestamped SNAPSHOTs  -->
+                                    <!-- <uniqueVersions>true</uniqueVersions> -->
+                                    <!-- If you wish to ignore certain cases:
+                  <excludes>
+                    <exclude>com.google.guava:guava</exclude>
+                  </excludes>
+                  -->
+                                    <!-- If you include specific cases only these will be checked: (when omitted everything is included)
+                  <includes>
+                    <include>com.google.guava:guava</include>
+                  </includes>
+                  -->
+                                </requireUpperBoundDeps>
+                            </rules>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
