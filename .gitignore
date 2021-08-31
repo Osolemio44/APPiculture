@@ -37,3 +37,6 @@ mvn_repo
 target
 target/
 out
+
+# vscode
+.vscode/
